@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 
-<html>
-<head>
-    <title>Claire's blog</title>
-</head>
-<h1>Hiii =-]</h1>
-<h2>waow</h2>
-<h3>A sub-sub-heading</h3>
-<body>
-    <p>Hi there!</p>
-    <p>It works!</p>
-</body>
-</html>
+<header>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</header>
+
+{% for post in posts %}
+    <article>
+        <time>published: {{ post.published_date }}</time>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </article>
+{% endfor %}
